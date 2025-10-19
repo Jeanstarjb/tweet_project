@@ -124,7 +124,7 @@ st.set_page_config(
 @st.cache_resource
 def load_model():
     print("🚀 Loading the fine-tuned RoBERTa model...")
-    MODEL_PATH = "checkpoint-885" # !! Make sure this matches your folder name !!
+    MODEL_PATH = "Shifterr/sentiment-model-roberta" # !! Make sure this matches your folder name !!
     tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
     model = AutoModelForSequenceClassification.from_pretrained(MODEL_PATH)
     print("✅ Model loaded successfully!")
