@@ -45,6 +45,7 @@ A vivid text cleaning pipeline was essential for preparing the noisy tweet data.
 A function was created to handle basic cleaning tasks like converting text to lowercase, removing "rt" artifacts, and stripping out all URLs, user mentions (@username), hashtags (#topic), and punctuation.
 
 **Advanced NLP Processing:**  
+
 Using the **NLTK** library, a second function performed:
 - **Tokenization:** Splitting text into individual words.  
 - **Custom Stopword Removal:** This was a key strategic decision. The standard NLTK stopword list was customized to preserve crucial negation and intensity words (e.g., *"not"*, *"never"*, *"very"*), which are vital for maintaining sentiment context.  
@@ -55,16 +56,19 @@ Using the **NLTK** library, a second function performed:
 ### 4.2. Modeling Journey
 
 **Iteration 1: Classic ML Baselines**  
-The initial approach was to train a suite of classic machine learning models (**Logistic Regression**, **SVC**, **Random Forest**, **XGBoost**) on the 3-class problem. While these models achieved modest accuracy (~60%), they failed at the core business problem, yielding extremely poor recall for the *Negative* class due to the severe class imbalance.
 
-**Iteration 2: Binary Classification Success**  
-To prove the viability of the approach, the problem was simplified to a **binary classifier** (*Positive vs. Negative*). This more balanced task allowed for effective model tuning. A **GridSearchCV-tuned Logistic Regression** model emerged as a champion, achieving an excellent **Macro F1-Score of 0.72**. This confirmed the feature engineering was effective and provided a strong baseline.
+-The initial approach was to train a suite of classic machine learning models (**Logistic Regression**, **SVC**, **Random Forest**, **XGBoost**) on the 3-class problem. While these models achieved modest accuracy (~60%), they failed at the core business problem, yielding extremely poor recall for the *Negative* class due to the severe class imbalance.
 
-**Iteration 3: The Deep Learning Breakthrough (Transformers)**  
-After hitting a performance plateau with traditional methods on the multiclass problem, the project moved to state-of-the-art Transformer models.
+**Iteration 2: Binary Classification Success** 
 
-- **DistilBERT:** A general-purpose Transformer model provided a significant breakthrough, achieving a **Macro F1-Score of 0.57** and a **Negative Recall of 53%**.  
-- **Twitter-RoBERTa (The Champion):** The final model, `cardiffnlp/twitter-roberta-base-sentiment-latest`, is a specialist pre-trained on billions of tweets. This model emerged as the undisputed champion.
+-To prove the viability of the approach, the problem was simplified to a **binary classifier** (*Positive vs. Negative*). This more balanced task allowed for effective model tuning. A **GridSearchCV-tuned Logistic Regression** model emerged as a champion, achieving an excellent **Macro F1-Score of 0.72**. This confirmed the feature engineering was effective and provided a strong baseline.
+
+**Iteration 3: The Deep Learning Breakthrough (Transformers)** 
+
+After hitting a performance plateau with traditional methods on the multiclass problem, the project moved to state-of-the-art Transformer models:
+
+1. **DistilBERT:** A general-purpose Transformer model provided a significant breakthrough, achieving a **Macro F1-Score of 0.57** and a **Negative Recall of 53%**.  
+2. **Twitter-RoBERTa (The Champion):** The final model, `cardiffnlp/twitter-roberta-base-sentiment-latest`, is a specialist model pre-trained on billions of tweets. This model emerged as the undisputed champion.
 
 ---
 
@@ -112,6 +116,8 @@ This project successfully demonstrates the journey from a complex, imbalanced da
 
 **Recommendations:**
 
-- **Integrate the Deployed App:** The live Streamlit app should be integrated into the workflow of a customer support or social media team to begin flagging negative feedback in real-time.  
-- **Establish a Human-in-the-Loop System:** The model's predictions should be reviewed by a human team. This not only allows for immediate customer engagement but also creates a valuable new dataset of corrected labels that can be used to re-train and further improve the model.  
-- **Future Work (V2.0):** The next iteration should focus on data augmentation to create more examples of tricky, ambiguous sentences to improve the model's precision on the *Negative* class.
+1. **Integrate the Deployed App:** The live Streamlit app should be integrated into the workflow of a customer support or social media team to begin flagging negative feedback in real-time.
+  
+2. **Establish a Human-in-the-Loop System:** The model's predictions should be reviewed by a human team. This not only allows for immediate customer engagement but also creates a valuable new dataset of corrected labels that can be used to re-train and further improve the model.
+ 
+3. **Future Work (V2.0):** The next iteration should focus on data augmentation to create more examples of tricky, ambiguous sentences to improve the model's precision on the *Negative* class.
