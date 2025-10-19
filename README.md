@@ -93,11 +93,16 @@ To ensure the model was not a "black box," **LIME** was used to explain its pred
 
 ## 6. Deployment
 
-The final, trained **RoBERTa** model was deployed as an interactive **web application using Streamlit**. The app provides a user-friendly interface where anyone can enter a tweet and receive an instant sentiment analysis, complete with confidence scores for each class.
+### Model Deployment
 
-The model itself is hosted on the **Hugging Face Hub**, and the application is deployed on **Hugging Face Spaces**, demonstrating a complete, professional, end-to-end **MLOps pipeline**.
+The final, trained **RoBERTa** model was deployed as an interactive web application using **Streamlit**. The app provides a user-friendly interface where anyone can enter a tweet and receive an instant **sentiment analysis**, complete with **confidence scores** for each class.
 
-**Live App URL:** [https://huggingface.co/spaces/Shifterr/sentiment-analyzer](https://huggingface.co/spaces/Shifterr/sentiment-analyzer)
+While the current deployment serves as a successful proof-of-concept, a minor setback has been identified where the model sometimes predicts the wrong sentiment. This indicates that **retraining** is necessary to enhance its predictive power and make it more robust.
+
+The model itself is **hosted on the Hugging Face Hub**, and the application is **deployed on Hugging Face Spaces**, demonstrating a complete, professional, end-to-end **MLOps pipeline**.
+
+🔗 **Live App URL:** [https://huggingface.co/spaces/Shifterr/sentiment-analyzer](https://huggingface.co/spaces/Shifterr/sentiment-analyzer)
+
 
 ---
 
