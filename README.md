@@ -46,7 +46,7 @@ A function was created to handle basic cleaning tasks like converting text to lo
 
 **Advanced NLP Processing:**  
 
-Using the **NLTK** library, a second function performed:
+Using the **NLTK** library, a second function was performed:
 - **Tokenization:** Splitting text into individual words.  
 - **Custom Stopword Removal:** This was a key strategic decision. The standard NLTK stopword list was customized to preserve crucial negation and intensity words (e.g., *"not"*, *"never"*, *"very"*), which are vital for maintaining sentiment context.  
 - **Lemmatization:** Reducing words to their dictionary root form (e.g., *"running"* becomes *"run"*) to group related concepts.
