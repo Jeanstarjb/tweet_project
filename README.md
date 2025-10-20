@@ -6,7 +6,6 @@ This project presents a comprehensive, end-to-end machine learning pipeline for 
 
 The project follows a strategic, iterative approach, beginning with classic machine learning models and culminating in the fine-tuning of a state-of-the-art, pre-trained Transformer model. The final result is a high-performing classifier deployed as an interactive web application using **Streamlit**.
 
----
 
 ## 2. Business Understanding
 
@@ -17,7 +16,6 @@ In the digital age, social media platforms like Twitter are a primary channel fo
 - **Primary Metric:** Model's ability to accurately identify negative sentiment, measured by **Recall** and **F1-Score** for the *Negative* class.  
 - **Secondary Metric:** Overall balanced performance across all classes, measured by the **Macro Average F1-Score**.
 
----
 
 ## 3. Data
 
@@ -31,7 +29,7 @@ After an intensive cleaning phase, the EDA revealed several critical insights th
 - **Distinct Brand Personas:** *Apple* generated significantly more emotional engagement (both positive and negative) compared to *Google*, whose discussions were more informational and neutral.  
 - **Statistical Significance:** Hypothesis testing (Chi-Square, T-test) confirmed that the observed differences in sentiment distribution between brands and tweet length between sentiments were statistically significant, validating their potential as predictive features.
 
----
+
 
 ## 4. Methodology
 
@@ -51,7 +49,7 @@ Using the **NLTK** library, a second function was performed:
 - **Custom Stopword Removal:** This was a key strategic decision. The standard NLTK stopword list was customized to preserve crucial negation and intensity words (e.g., *"not"*, *"never"*, *"very"*), which are vital for maintaining sentiment context.  
 - **Lemmatization:** Reducing words to their dictionary root form (e.g., *"running"* becomes *"run"*) to group related concepts.
 
----
+
 
 ### 4.2. Modeling Journey
 
@@ -70,11 +68,11 @@ After hitting a performance plateau with traditional methods on the multiclass p
 1. **DistilBERT:** A general-purpose Transformer model provided a significant breakthrough, achieving a **Macro F1-Score of 0.57** and a **Negative Recall of 53%**.  
 2. **Twitter-RoBERTa (The Champion):** The final model, `cardiffnlp/twitter-roberta-base-sentiment-latest`, is a specialist model pre-trained on billions of tweets. This model emerged as the undisputed champion.
 
----
+
 
 ## 5. Final Model and Evaluation
 
-🏆 **Final Champion Model:** Fine-Tuned **Twitter-RoBERTa**
+ **Final Champion Model:** Fine-Tuned **Twitter-RoBERTa**
 
 This model, fine-tuned on a **Google Colab GPU**, provided the best and most balanced performance on the challenging 3-class problem.
 
@@ -93,7 +91,7 @@ This model successfully solved the core business problem by identifying **60% of
 
 To ensure the model was not a "black box," **LIME** was used to explain its predictions. The analysis confirmed that the model was making intelligent, human-like decisions by correctly identifying sentiment-bearing words (like *"headache"*) as the primary drivers for its predictions.
 
----
+
 
 ## 6. Deployment
 
@@ -107,8 +105,6 @@ The model itself is **hosted on the Hugging Face Hub**, and the application is *
 
 🔗 **Live App URL:** [https://huggingface.co/spaces/Shifterr/sentiment-analyzer](https://huggingface.co/spaces/Shifterr/sentiment-analyzer)
 
-
----
 
 ## 7. Conclusion and Recommendations
 
