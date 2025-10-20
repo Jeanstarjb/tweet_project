@@ -2,7 +2,7 @@
 
 ## 1. Project Overview
 
-This project presents a comprehensive, end-to-end machine learning pipeline for classifying the sentiment of tweets directed at major tech brands (**Apple** and **Google**). The primary business objective is to develop an automated system capable of identifying customer sentiment—with a critical focus on accurately detecting **negative feedback**—to enable proactive customer engagement and strategic brand management.
+This project presents a comprehensive, end-to-end machine learning pipeline for classifying the sentiment of tweets directed at major tech brands (**Apple** and **Google**). The primary business objective is to develop an automated system capable of identifying customer sentiment—with a critical focus on accurately detecting **negative feedback**—to enable proactive customer engagement and strategic brand management
 
 The project follows a strategic, iterative approach, beginning with classic machine learning models and culminating in the fine-tuning of a state-of-the-art, pre-trained Transformer model. The final result is a high-performing classifier deployed as an interactive web application using **Streamlit**.
 
